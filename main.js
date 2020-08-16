@@ -33,11 +33,11 @@ for(var i = 1; i <= slidesCount; i++){
    paginationItem.setAttribute("date-index", i);
    
    //set  item Content
-   paginationItem.appendChild(document.createTextNode(i))
+   paginationItem.appendChild(document.createTextNode(i));
 
    //Append Items to the main ul
    paginationElement.appendChild(paginationItem);
-}
+};
 
 //add the creat ul element to the page
 document.getElementById("indicators").appendChild(paginationElement);
@@ -53,34 +53,34 @@ for(var i = 0; i< paginationsBullets.length; i++){
     paginationsBullets[i].onclick = function () {
         CurrentSlide = parseInt(this.getAttribute("date-index"));
         theCheckar();
-    }
-}
+    };
+};
 
 //trigger the checker function
 theCheckar();
 
-
 //next slide function
 function nextSlide(){
-    if(nextButton.classList.contains("disable")){
+    debugger
+    if(nextButton.classList.contains("disabled")){
         //Do Nothing
         return false;
     }else {
         CurrentSlide++;
         theCheckar();
-    }
+    };
 };
 
 //prev slide function
 function prevSlide(){
-    if(prevButton.classList.contains("disable")){
+    if(prevButton.classList.contains("disabled")){
         //Do Nothing
         return false;
     }else {
 
         CurrentSlide--;
         theCheckar();
-    }
+    };
 };
 
 //Create The Checer function 
@@ -105,7 +105,7 @@ function theCheckar() {
     }else{
          //Remove Disabled Class From previous Button
          prevButton.classList.remove("disabled");
-    }
+    };
     
     //check if current slide is the last
     if(CurrentSlide == slidesCount){
@@ -115,7 +115,7 @@ function theCheckar() {
     }else{
          //Remove Disabled Class From next Button
          nextButton.classList.remove("disabled");
-    }
+    };
 };
 
 //Remove All Active class Form Images and pagination Bullets
@@ -129,6 +129,4 @@ function remveAllActive(){
     paginationsBullets.forEach(function(bullet){
         bullet.classList.remove("active");
     });
-
-
-}
+};
